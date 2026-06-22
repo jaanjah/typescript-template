@@ -1,0 +1,9 @@
+{
+	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
+	"extends": ["config:recommended", "helpers:pinGitHubActionDigestsToSemver"],
+	"schedule": ["every weekend"],
+	"labels": ["dependencies"],
+	"assignees": ["jaanjah"],
+	"reviewers": ["jaanjah"],
+	"dependencyDashboardApproval": false
+}
