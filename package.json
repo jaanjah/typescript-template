@@ -1,46 +1,38 @@
 {
-	"name": "typescript-template",
-	"version": "1.0.0",
-	"description": "Template repository to start off a TypeScript project",
-	"type": "module",
-	"module": "src/main.ts",
-	"prettier": "@jaanjah/prettier-config",
-	"engines": {
-		"bun": ">=1.3"
-	},
-	"scripts": {
-		"dev": "bun --watch src/main.ts",
-		"start": "bun src/main.ts",
-		"build": "bun build src/main.ts --outdir build --target bun --minify",
-		"typecheck": "tsc --noEmit",
-		"test": "bun test",
-		"lint": "bun run eslint:check && bun run prettier:check && bun run typecheck",
-		"fix": "bun run eslint:fix && bun run prettier:write",
-		"eslint:check": "eslint",
-		"eslint:fix": "eslint --fix",
-		"prettier:check": "prettier --check \"**/*.ts\"",
-		"prettier:write": "prettier --write \"**/*.ts\"",
-		"prepare": "husky"
-	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/JaanJah/typescript-template.git"
-	},
-	"author": "JaanJah",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/JaanJah/typescript-template/issues"
-	},
-	"homepage": "https://github.com/JaanJah/typescript-template#readme",
-	"devDependencies": {
-		"@jaanjah/eslint-config": "^2.0.2",
-		"@jaanjah/prettier-config": "^1.0.4",
-		"@types/bun": "^1.3",
-		"eslint": "^9.39.2",
-		"husky": "^9.1.7",
-		"jiti": "^2.6.1",
-		"lint-staged": "^16.2.7",
-		"prettier": "^3.8.1",
-		"typescript": "^6.0.0"
-	}
+  "name": "typescript-template",
+  "version": "1.0.0",
+  "description": "Template repository to start off a TypeScript project",
+  "type": "module",
+  "module": "src/main.ts",
+  "engines": {
+    "bun": ">=1.3"
+  },
+  "scripts": {
+    "dev": "bun --watch src/main.ts",
+    "start": "bun src/main.ts",
+    "build": "bun build src/main.ts --outdir build --target bun --minify",
+    "typecheck": "tsc --noEmit",
+    "test": "bun test",
+    "lint": "biome check && bun run typecheck",
+    "fix": "biome check --write",
+    "format": "biome format --write",
+    "prepare": "husky"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JaanJah/typescript-template.git"
+  },
+  "author": "JaanJah",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/JaanJah/typescript-template/issues"
+  },
+  "homepage": "https://github.com/JaanJah/typescript-template#readme",
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.0",
+    "@types/bun": "^1.3",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
+    "typescript": "^6.0.0"
+  }
 }
