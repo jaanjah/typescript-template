@@ -4,6 +4,26 @@
 
 Template repository to start off a TypeScript project
 
+## Getting started
+
+1. Create a repository from this template, then update `name`,
+   `description`, `repository`, `bugs` and `homepage` in `package.json`.
+2. Install dependencies. This also installs the pre-commit hook, which runs
+   Biome on staged files:
+
+   ```sh
+   bun install
+   ```
+
+| Script | Does |
+|---|---|
+| `bun run dev` | Run `src/main.ts` and restart on changes |
+| `bun run start` | Run `src/main.ts` once |
+| `bun run build` | Bundle into `build/` |
+| `bun test` | Run tests |
+| `bun run lint` | Biome check and `tsc --noEmit` |
+| `bun run fix` | Apply Biome fixes and formatting |
+
 ## Repository variables
 
 CI behaviour is toggled with repository variables, set via
