@@ -1,0 +1,6 @@
+[install]
+# Bun also reads ignore-scripts=true from .npmrc, which would skip this
+# package's own `prepare` script and leave git hooks uninstalled. Dependency
+# lifecycle scripts stay blocked by the empty `trustedDependencies` list in
+# package.json.
+ignoreScripts = false
