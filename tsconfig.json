@@ -5,8 +5,7 @@
     "target": "ESNext",
     "module": "Preserve",
     "moduleDetection": "force",
-    "jsx": "react-jsx",
-    "allowJs": true,
+    // TS 6+ loads no @types packages unless listed
     "types": ["bun"],
 
     // Bundler mode
@@ -21,10 +20,8 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
-
-    // Some stricter flags (disabled by default)
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noPropertyAccessFromIndexSignature": false
+    // Only syntax that type stripping can erase: no enums, namespaces or
+    // parameter properties
+    "erasableSyntaxOnly": true
   }
 }
