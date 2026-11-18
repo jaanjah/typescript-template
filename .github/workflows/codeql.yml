@@ -22,6 +22,9 @@ on:
 jobs:
   analyze:
     name: Analyze (${{ matrix.language }})
+    # Code scanning on private repos needs GitHub Code Security, otherwise the
+    # upload fails. Disable with: gh variable set CODEQL_ENABLED --body false
+    if: vars.CODEQL_ENABLED != 'false'
     # Runner size impacts CodeQL analysis time. To learn more, please see:
     #   - https://gh.io/recommended-hardware-resources-for-running-codeql
     #   - https://gh.io/supported-runners-and-hardware-resources
