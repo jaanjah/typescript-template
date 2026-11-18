@@ -28,6 +28,7 @@
     "url": "https://github.com/JaanJah/typescript-template/issues"
   },
   "homepage": "https://github.com/JaanJah/typescript-template#readme",
+  "trustedDependencies": [],
   "devDependencies": {
     "@biomejs/biome": "^2.5.0",
     "@types/bun": "^1.3",
