@@ -1,6 +1,7 @@
 {
   "name": "typescript-template",
   "version": "1.0.0",
+  "private": true,
   "description": "Template repository to start off a TypeScript project",
   "type": "module",
   "module": "src/main.ts",
