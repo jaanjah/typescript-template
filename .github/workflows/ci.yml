@@ -28,3 +28,20 @@ jobs:
       - run: bun run lint
       - run: bun test
       - run: bun run build
+
+  # The one required status check for branch protection. The matrix changes
+  # with the CI_*_ENABLED variables, so its job names can't be required.
+  ci-ok:
+    needs: check
+    # always(), not !cancelled(): a skipped required check counts as passing,
+    # so a failed or cancelled matrix must fail this job, not skip it.
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail unless every check job succeeded
+        if: needs.check.result != 'success'
+        env:
+          RESULT: ${{ needs.check.result }}
+        run: |
+          echo "check result: $RESULT"
+          exit 1
