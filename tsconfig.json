@@ -19,6 +19,9 @@
     "skipLibCheck": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedIndexedAccess": true,
-    "noImplicitOverride": true
+    "noImplicitOverride": true,
+    // Only syntax that type stripping can erase: no enums, namespaces or
+    // parameter properties
+    "erasableSyntaxOnly": true
   }
 }
