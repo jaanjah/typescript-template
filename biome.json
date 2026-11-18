@@ -10,7 +10,17 @@
     "indentStyle": "space"
   },
   "linter": {
-    "enabled": true
+    "enabled": true,
+    "rules": {
+      "performance": {
+        "noBarrelFile": "error",
+        "noReExportAll": "error"
+      },
+      "style": {
+        "noCommonJs": "error",
+        "noDefaultExport": "error"
+      }
+    }
   },
   "javascript": {
     "formatter": {
