@@ -9,6 +9,12 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  # One group per PR so a new push cancels its older run; pushes to master
+  # get a unique group and are never cancelled.
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.run_id }}
+  cancel-in-progress: true
+
 jobs:
   check:
     strategy:
@@ -24,7 +30,7 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
-      - run: bun install --frozen-lockfile
+      - run: bun ci
       - run: bun run lint
       - run: bun test
       - run: bun run build

@@ -1,9 +1,24 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", "helpers:pinGitHubActionDigestsToSemver"],
+  "extends": [
+    "config:best-practices",
+    "helpers:pinGitHubActionDigestsToSemver",
+    "customManagers:biomeVersions"
+  ],
   "schedule": ["every weekend"],
   "labels": ["dependencies"],
   "assignees": ["jaanjah"],
   "reviewers": ["jaanjah"],
-  "dependencyDashboardApproval": false
+  "packageRules": [
+    {
+      "description": "Update the Biome package and the biome.json $schema together",
+      "matchPackageNames": ["@biomejs/biome"],
+      "groupName": "Biome"
+    },
+    {
+      "description": "Update the Bun runtime and its type definitions together",
+      "matchPackageNames": ["bun", "@types/bun"],
+      "groupName": "Bun"
+    }
+  ]
 }
