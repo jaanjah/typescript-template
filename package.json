@@ -29,7 +29,7 @@
   "trustedDependencies": [],
   "devDependencies": {
     "@biomejs/biome": "^2.5.0",
-    "@types/bun": "^1.3",
+    "@types/bun": "1.4.5",
     "husky": "9.1.7",
     "lint-staged": "17.6.1",
     "typescript": "7.0.2"
