@@ -4,7 +4,7 @@
   "private": true,
   "description": "Template repository to start off a TypeScript project",
   "type": "module",
-  "packageManager": "bun@1.4.4",
+  "packageManager": "bun@1.4.5",
   "scripts": {
     "dev": "bun --watch src/main.ts",
     "start": "bun src/main.ts",
